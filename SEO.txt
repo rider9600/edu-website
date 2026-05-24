@@ -1,0 +1,237 @@
+Build Topic Clusters
+Create connected pages instead of random articles.
+
+Example:
+
+Probability
+ ├ Basics
+ ├ Conditional Probability
+ ├ Bayes Theorem
+ ├ Random Variables
+ ├ Binomial Distribution
+
+Interlink them heavily to build topical authority.
+
+Use Clean URLs
+Good:
+/probability/bayes-theorem
+
+Bad:
+
+/page?id=27
+
+Use lowercase + hyphens only.
+
+Optimize Page Titles
+Format:
+[Topic] + [Search Intent]
+
+Examples:
+
+Bayes Theorem Explained Visually
+Normal Distribution with Graphs
+
+The <title> tag strongly affects rankings.
+
+Add Visual & Interactive Content
+Use:
+graphs,
+simulations,
+sliders,
+animations.
+
+Benefits:
+
+higher engagement,
+lower bounce rate,
+more backlinks/shares.
+Use Proper Heading Structure
+Structure pages clearly:
+H1 → Main Topic
+H2 → Sections
+H3 → Subsections
+
+Helps Google understand content hierarchy.
+
+Add Internal Links Everywhere
+Example:
+Learn Conditional Probability first
+
+Link to related pages.
+
+Benefits:
+
+better crawlability,
+longer session time,
+spreads SEO authority.
+Optimize Website Speed
+For Next.js:
+image compression,
+lazy loading,
+static generation,
+minimal JS,
+Vercel caching.
+
+Target:
+
+Mobile score > 85
+Load time < 2.5s
+
+Use:
+PageSpeed Insights
+
+Add Structured Metadata (Schema)
+Use:
+Article schema,
+FAQ schema,
+Breadcrumb schema.
+
+Benefits:
+
+rich search results,
+FAQ dropdowns,
+improved indexing.
+
+Use JSON-LD in Next.js.
+
+Write Search-Intent Content
+Write topics people actually search.
+
+Examples:
+
+Probability tricks for JEE
+Expected value explained simply
+Difference between permutation and combination
+
+Not just textbook headings.
+
+Stay Consistent & Focused
+Post:
+2–3 high-quality articles weekly,
+with visuals + internal links.
+
+Focus deeply on:
+
+Probability + Statistics + Visual Learning
+
+Google rewards niche authority over broad low-quality content.
+
+Important tools:
+
+Next.js Metadata API
+Google Search Console
+Google Analytics
+Schema.org
+
+Core SEO Advantage for Your Site:
+
+Interactive Visuals + Intuitive Math Explanations + Strong Topic Structure
+
+That combination is very strong for long-term SEO growth.
+
+
+Build Strong Topic Clusters
+Organize content hierarchically:
+/probability/
+/statistics/
+/probability/bayes-theorem
+
+Interlink related pages to build topical authority.
+
+Match Search Intent
+Write what users actually search:
+“Bayes theorem explained simply”
+“Probability tricks for JEE”
+
+Focus on solving user questions, not keyword stuffing.
+
+Use Clean SEO-Friendly URLs
+Good:
+/probability/conditional-probability
+
+Avoid random IDs or deep nesting.
+
+Optimize Titles & Metadata
+Each page needs:
+unique title,
+meta description,
+H1 with primary keyword.
+
+Keep titles clear and clickable.
+
+Use Proper Content Structure
+Format content clearly:
+H1 → Main Topic
+H2 → Questions/Sections
+H3 → Subtopics
+
+Use:
+
+bullets,
+FAQs,
+tables,
+summaries.
+
+AI search engines prefer structured content.
+
+Add Interactive & Visual Content
+Use:
+simulations,
+graphs,
+animations,
+visual explanations.
+
+Improves:
+
+engagement,
+dwell time,
+backlinks,
+retention.
+Improve Technical SEO & Speed
+Target:
+LCP < 2.5s
+Mobile optimized
+HTTPS enabled
+
+Use:
+
+image compression,
+lazy loading,
+static generation,
+minimal JS.
+Add Schema Markup
+Use JSON-LD schema:
+Article,
+FAQ,
+Breadcrumb,
+Course.
+
+Helps with:
+
+rich snippets,
+AI visibility,
+indexing.
+Build E-E-A-T Signals
+Show:
+expertise,
+author credibility,
+real examples,
+updated content.
+
+Google rewards trustworthy educational content.
+
+Stay Consistent & Avoid Thin AI Content
+Publish:
+high-quality,
+deeply useful,
+regularly updated articles.
+
+Better:
+
+2 excellent articles/week
+
+than:
+
+50 shallow AI pages
+
+Google prioritizes genuinely helpful content.

@@ -1,0 +1,448 @@
+# Probability & Statistics Education Platform — Refined Roadmap
+
+# 1. Main Goal
+
+Build a modern educational website focused ONLY on:
+
+* Probability
+* Statistics
+* Visual intuition
+* Interactive simulations
+* Engineering-friendly explanations
+
+Goal:
+Create one of the best student-friendly Probability & Statistics learning platforms.
+
+---
+
+# 2. Main Philosophy
+
+The website should focus on:
+
+* conceptual understanding
+* visual learning
+* intuition
+* simulations
+* gradual explanations
+
+NOT:
+
+* formula dumping
+* copied notes
+* low-quality AI spam
+
+---
+
+# 3. Core Tech Stack
+
+Frontend:
+
+* Next.js
+* TypeScript
+* Tailwind CSS
+* MDX
+
+Deployment:
+
+* Vercel
+
+Version Control:
+
+* Git + GitHub
+
+Visualization Tools:
+
+* Desmos
+* Recharts
+* D3.js (later)
+
+Future Database:
+
+* PostgreSQL
+
+---
+
+# 4. Main Repository Structure
+
+math-edu-platform/
+
+public/
+images/
+graphs/
+
+resources/
+lectures/
+pdfs/
+markdown-notes/
+
+content/
+probability/
+statistics/
+distributions/
+simulation/
+convergence/
+bayesian/
+
+src/
+
+app/
+components/
+visualizations/
+lib/
+styles/
+
+README.md
+package.json
+
+---
+
+# 5. Purpose of Important Folders
+
+## resources/
+
+Contains:
+
+* lecture PDFs
+* markdown notes
+* AI reference material
+* concept planning material
+
+Used for:
+
+* AI agents
+* article drafting
+* visualization ideas
+* concept extraction
+
+Examples:
+resources/lectures/L1.pdf
+resources/markdown-notes/variance.md
+
+IMPORTANT:
+This folder is INTERNAL ONLY.
+
+---
+
+## content/
+
+Contains final website articles.
+
+Examples:
+content/probability/conditional-probability.mdx
+
+Each article should contain:
+
+* intuition
+* formulas
+* examples
+* visual explanation
+* references
+
+---
+
+## visualizations/
+
+Contains simulations and interactive demos.
+
+Examples:
+
+* coin toss simulator
+* Gaussian graph
+* CLT visualization
+* Bayes theorem animation
+
+---
+
+## components/
+
+Reusable website UI.
+
+Examples:
+
+* Navbar
+* Sidebar
+* TopicCard
+* FormulaBox
+* GraphContainer
+
+---
+
+# 6. Main Website Sections
+
+## Homepage
+
+Should contain:
+
+* website purpose
+* featured topics
+* featured visualizations
+* topic categories
+
+---
+
+## Probability Section
+
+Topics:
+
+* Sample Space
+* Events
+* Conditional Probability
+* Bayes Theorem
+* Random Variables
+
+---
+
+## Statistics Section
+
+Topics:
+
+* Mean
+* Variance
+* Standard Deviation
+* CLT
+* Estimation
+* MLE
+* Bayesian Inference
+
+---
+
+## Distributions Section
+
+Topics:
+
+* Bernoulli
+* Binomial
+* Poisson
+* Gaussian
+* Exponential
+
+---
+
+## Simulation Section
+
+Topics:
+
+* Monte Carlo
+* Inverse Transform Sampling
+* Random Walks
+* Accept-Reject Sampling
+
+---
+
+# 7. Article Writing Structure
+
+Every article should follow this structure:
+
+1. Intuitive Introduction
+2. Real-world Example
+3. Formal Definition
+4. Visual Explanation
+5. Formula Intuition
+6. Worked Example
+7. Simulation / Graph
+8. Common Mistakes
+9. Related Topics
+10. References
+
+---
+
+# 8. First 20 Articles
+
+## Beginner
+
+1. What is Probability
+2. Sample Space
+3. Events in Probability
+4. Conditional Probability
+5. Bayes Theorem
+6. Random Variables
+7. PMF vs PDF
+8. CDF Explained
+9. Expected Value
+10. Variance
+
+## Intermediate
+
+11. Standard Deviation
+12. Bernoulli Distribution
+13. Binomial Distribution
+14. Gaussian Distribution
+15. Poisson Distribution
+16. Central Limit Theorem
+17. Covariance
+18. Correlation
+19. Convergence in Probability
+20. Maximum Likelihood Estimation
+
+---
+
+# 9. First Visualizations To Build
+
+## Easy
+
+* Coin Toss Simulator
+* Dice Probability Simulator
+* Mean & Variance Visualizer
+
+## Medium
+
+* Bayes Theorem Visualizer
+* Gaussian Distribution Slider
+* PMF vs PDF Comparison
+
+## Advanced
+
+* CLT Animation
+* Random Walk Simulation
+* Monte Carlo Integration
+
+---
+
+# 10. Development Phases
+
+## Phase 1 — Setup
+
+Tasks:
+
+* create Next.js project
+* setup Tailwind
+* setup MDX
+* create GitHub repo
+* deploy on Vercel
+
+Goal:
+Website online.
+
+---
+
+## Phase 2 — Core Content
+
+Tasks:
+
+* publish first 10 articles
+* improve typography
+* add diagrams
+* add formulas
+
+Goal:
+Useful educational content exists.
+
+---
+
+## Phase 3 — Interactive Learning
+
+Tasks:
+
+* build simulations
+* add graphs
+* add animations
+
+Goal:
+Differentiate from normal note websites.
+
+---
+
+## Phase 4 — SEO
+
+Tasks:
+
+* metadata
+* internal linking
+* sitemap
+* structured article hierarchy
+
+Goal:
+Google indexing + organic traffic.
+
+---
+
+# 11. Weekly Workflow
+
+## Monday
+
+Study topic deeply.
+
+## Tuesday
+
+Write article draft.
+
+## Wednesday
+
+Improve explanations.
+
+## Thursday
+
+Build visualization.
+
+## Friday
+
+Publish article.
+
+## Saturday
+
+Improve SEO + UI.
+
+## Sunday
+
+Plan next topic.
+
+---
+
+# 12. Immediate Tasks
+
+## THIS WEEK
+
+1. Install Node.js
+2. Install VS Code
+3. Create Next.js project
+4. Create GitHub repository
+5. Deploy on Vercel
+6. Create folder structure
+7. Add lecture PDFs
+8. Add markdown resources
+9. Create homepage
+10. Create first article page
+
+---
+
+# 13. First Article Recommendation
+
+Title:
+Conditional Probability Explained Visually
+
+Why:
+
+* foundational topic
+* highly confusing for students
+* visualizable
+* highly searchable
+
+---
+
+# 14. Important Rules
+
+DO:
+
+* explain slowly
+* use intuition
+* use diagrams
+* use simulations
+* use engineering examples
+
+DO NOT:
+
+* copy textbooks
+* dump formulas
+* mass generate AI content
+* overcomplicate UI initially
+
+---
+
+# 15. Long-Term Goal
+
+Become a trusted Probability & Statistics learning platform with:
+
+* visual explanations
+* interactive simulations
+* deep conceptual clarity
+* engineering-focused teaching
