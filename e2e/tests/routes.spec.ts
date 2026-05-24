@@ -7,6 +7,8 @@ for (const route of routes) {
     const resp = await page.goto(route);
     expect(resp).not.toBeNull();
     expect(resp && resp.ok()).toBeTruthy();
-    await expect(page).toHaveURL(new RegExp(route === '/' ? '^/$' : `${route}`));
+    // Match route at the end of the full URL. For '/' ensure URL ends with '/'.
+    const expected = route === '/' ? /\/$/ : new RegExp(`${route}$`);
+    await expect(page).toHaveURL(expected);
   });
 }

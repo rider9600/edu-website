@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { BEGINNER_TOPICS, INTERMEDIATE_TOPICS } from "@/lib/constants";
+import CourseProgress from "@/components/ui/CourseProgress";
 
 type Topic = {
   title: string;
@@ -31,6 +32,9 @@ export default function Sidebar({ topics }: { topics: Topic[] }) {
       </div>
 
       <div className="space-y-4">
+        <div>
+          <CourseProgress />
+        </div>
         <div>
           <h4 className="text-sm font-semibold text-slate-300 mb-2">
             Probability

@@ -5,6 +5,7 @@ import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import FormulaBox from "@/components/ui/FormulaBox";
+import ClientOnly from "@/components/ui/ClientOnly";
 import {
   CoinTossSimulator,
   DiceSimulator,
@@ -16,12 +17,9 @@ import {
   CurveFittingVisualizer,
 } from "@/visualizations";
 
-export default async function LecturePage({
-  params,
-}: {
-  params: { id: string };
-}) {
-  const id = params.id;
+export default async function LecturePage(props: any) {
+  const { params } = props;
+  const id = params?.id as string;
   const doc = getLectureContent(id);
   if (!doc) {
     return (
@@ -56,14 +54,46 @@ export default async function LecturePage({
           source={mdxSource}
           components={{
             FormulaBox,
-            CoinTossSimulator,
-            DiceSimulator,
-            BayesTheoremVisualizer,
-            DistributionParameterExplorer,
-            RandomWalkSimulation,
-            MonteCarloIntegration,
-            HypothesisTestingExplorer,
-            CurveFittingVisualizer,
+            CoinTossSimulator: (props: any) => (
+              <ClientOnly>
+                <CoinTossSimulator {...props} />
+              </ClientOnly>
+            ),
+            DiceSimulator: (props: any) => (
+              <ClientOnly>
+                <DiceSimulator {...props} />
+              </ClientOnly>
+            ),
+            BayesTheoremVisualizer: (props: any) => (
+              <ClientOnly>
+                <BayesTheoremVisualizer {...props} />
+              </ClientOnly>
+            ),
+            DistributionParameterExplorer: (props: any) => (
+              <ClientOnly>
+                <DistributionParameterExplorer {...props} />
+              </ClientOnly>
+            ),
+            RandomWalkSimulation: (props: any) => (
+              <ClientOnly>
+                <RandomWalkSimulation {...props} />
+              </ClientOnly>
+            ),
+            MonteCarloIntegration: (props: any) => (
+              <ClientOnly>
+                <MonteCarloIntegration {...props} />
+              </ClientOnly>
+            ),
+            HypothesisTestingExplorer: (props: any) => (
+              <ClientOnly>
+                <HypothesisTestingExplorer {...props} />
+              </ClientOnly>
+            ),
+            CurveFittingVisualizer: (props: any) => (
+              <ClientOnly>
+                <CurveFittingVisualizer {...props} />
+              </ClientOnly>
+            ),
           }}
         />
       </article>

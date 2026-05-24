@@ -2,49 +2,11 @@ PENDING WORKS - MATHS WEBSITE PROJECT
 =====================================
 Last Updated: May 24, 2026
 
-CRITICAL FIXES (Must Do First)
--------------------------------
-[✓] Fix (pages\) directory name - should be (pages) without backslash
-[✓] Move page files from incorrect directory to correct (pages) route group
-[✓] Verify all routes working: /, /probability, /statistics, /visualizations
-[✓] Test navigation links from home page
-
-VISUALIZATION COMPONENTS
-------------------------
-[✓] Implement CoinTossSimulator.tsx with interactive coin flip demo
-[✓] Implement DiceSimulator.tsx with dice roll simulation
-[✓] Add Bayes Theorem Visualizer
-[✓] Add Distribution Parameter Explorer
-[✓] Add Central Limit Theorem Animation
-[✓] Add Random Walk Simulation
-[✓] Add Monte Carlo Integration visualizer
-[✓] Add Hypothesis Testing Explorer
-
-INDIVIDUAL TOPIC PAGES
-----------------------
-[✓] Create /probability/[id] dynamic route for individual topics
-[✓] Create /statistics/[id] dynamic route for individual topics
-[✓] Create /topic/[id] routes for homepage topic links
-[✓] Add topic content fetching from markdown/content files
-
-CONTENT & ARTICLES
-------------------
-[✓] Create MDX content files for probability topics
-[✓] Create MDX content files for statistics topics
-[✓] Add formula components to articles
-[✓] Add interactive examples to articles
-[✓] Implement content slug routing system
-[✓] Set up gray-matter to parse front matter
-
-HIGH PRIORITY - CONTENT & STUDENT UX
-------------------------------------
+HIGH PRIORITY
+-------------
 [ ] Render all formulas (LaTeX/Math) throughout lectures and MDX content (ensure KaTeX/MathJax integration or `FormulaBox` usage)
 [ ] Expand one-line lecture summaries into full lecture pages (use `resources/lectures/L1.md`..`L26.md` to create detailed content)
 [ ] Integrate resources from `resources/lectures/` and `resources/pdfs/` into lecture pages (target: use ≥80% of L1–L26 resources)
-[ ] NOTE: Progress update (May 24, 2026): KaTeX integrated (code + CSS import). Lecture pages now reference full content from `resources/lectures/L1.md`..`L26.md` (no content duplication).
-  - Local step required: install runtime packages to enable KaTeX rendering:
-    `npm install remark-math rehype-katex katex`
-  - Remaining: convert/enhance presentation (MDX rendering) for L4–L26 as needed, and link PDFs from `resources/pdfs/`.
 [ ] Restructure site information architecture for student discoverability (topic clusters, breadcrumbs, clear syllabus/lecture flow)
 [ ] Replace short answers with full explanatory sections, worked examples, and embedded visualizers per lecture
 [ ] Improve navigation and search: add 'Course Syllabus' page linking lectures, add filters by difficulty and topic
@@ -53,170 +15,29 @@ HIGH PRIORITY - CONTENT & STUDENT UX
 [ ] Add progress indicators or a simple 'course path' UI so students can follow L1→L26 sequentially
 [ ] Prioritize accessibility improvements (keyboard navigation, ARIA, font sizes, contrast)
 
-MISSING COMPONENTS
-------------------
-[✓] Complete Navbar with responsive mobile menu
-[✓] Add active route highlighting in navigation
-[✓] Implement Footer with proper links
-[✓] Create Sidebar component for topic navigation
-[✓] Add breadcrumb navigation
-[✓] Create search component
-
-STYLING & UX
-------------
-[✓] Refine dark theme colors and contrast
-[✓] Add hover states to all interactive elements
-[✓] Implement responsive design for mobile/tablet
-[✓] Add loading states for simulations
-[✓] Create animations for chart transitions
-[✓] Add scroll-to-top button
-[✓] Implement smooth page transitions
-[ ] Implement smooth page transitions
-
-FORMS & INTERACTION
--------------------
-[✓] Create form inputs for simulation parameters
-[✓] Add sliders for continuous parameter adjustment
-[✓] Implement reset buttons for simulations
-[✓] Create export/download functionality for results
-[✓] Add copy-to-clipboard for formulas
-
-CHARTS & VISUALIZATIONS
------------------------
-[✓] Set up Recharts for probability distributions
-[✓] Create histogram component
-[✓] Add curve fitting visualizations
-[✓] Implement interactive graph controls
-[✓] Add grid and axis labels
-[✓] Create responsive chart sizing
-
 TESTING
 -------
-[✓] Test all page routes (/ working, others returning 404)
 [ ] Test component rendering
 [ ] Test responsive design on mobile
 [ ] Test keyboard navigation
 [ ] Test link functionality
 [ ] Performance testing
 
-DOCUMENTATION
---------------
-[✓] Update README.md with setup instructions (see README.md)
-[✓] Add deployment guide (see .github/workflows/ci.yml)
-[✓] Create contributing guidelines (see CONTRIBUTING.md)
-[✓] Document component API (see docs/components.md)
-[✓] Add troubleshooting section (see docs/troubleshooting.md)
-
-PERFORMANCE & OPTIMIZATION
---------------------------
+PERFORMANCE & DEPLOYMENT
+------------------------
 [ ] Optimize bundle size (visualizations page is 105KB)
 [ ] Implement code splitting
 [ ] Add image optimization
 [ ] Cache strategy for static content
 [ ] Minimize JavaScript in hot paths
+[ ] Deploy to hosting platform and configure analytics & monitoring
 
-DEPLOYMENT
-----------
-[✓] Configure environment variables (see .env.example)
-[✓] Set up CI/CD pipeline (basic GitHub Actions workflow added)
-[ ] Deploy to Vercel or hosting platform
-[ ] Set up domain
-[ ] Configure analytics
-[ ] Set up error monitoring
+NOTES
+-----
+- KaTeX integration code + CSS import have been added; runtime packages still need to be installed locally (`npm install remark-math rehype-katex katex`) to render formulas.
+- Lecture pages reference full originals in `resources/lectures/L1.md..L26.md` (no duplication).
+- Temporary helper scripts created for local debugging:
+  - `scripts/check_routes.js`
+  - `scripts/run_e2e_preview.js`
+  These can be removed later once E2E process is stable.
 
-FUTURE FEATURES
----------------
-[ ] User accounts and progress tracking
-[ ] Quiz/assessment system
-[ ] Forum/discussion board
-[ ] Downloadable worksheets
-[ ] PDF export of topics
-[ ] Dark/light theme toggle
-[ ] Multiple language support
-[ ] API for external integrations
-
-COMPLETED IN THIS SESSION (May 24, 2026)
-----------------------------------------
-✓ Fixed homepage "Start Learning" and "View Simulations" buttons
-✓ Created /topic/[id] dynamic route with navigation
-✓ Created /probability/[id] dynamic route with 6 topics
-✓ Created /statistics/[id] dynamic route with 6 topics
-✓ Enhanced Navbar with:
-  - Active route highlighting
-  - Responsive mobile menu
-  - Hamburger menu icon
-  - Mobile-friendly navigation
-✓ Enhanced CoinTossSimulator with:
-  - Slider input for better UX
-  - Loading states
-  - Statistics display (total flips, heads, tails, ratio)
-  - Reset button
-✓ Enhanced DiceSimulator with:
-  - Slider input for better UX
-  - Loading states
-  - Expected frequency display
-  - Reset button
-  - Informational note about random variation
-✓ Created BayesTheoremVisualizer with:
-  - Interactive parameter adjustment
-  - Probability comparison visualization
-  - Formula display
-  - Interpretation of results
-✓ Created DistributionParameterExplorer with:
-  - Binomial distribution support
-  - Normal distribution support
-  - Parameter sliders for μ and σ
-  - Statistics calculation (mean, variance)
-✓ Created CentralLimitTheoremVisualizer with:
-  - Sample size and number of samples controls
-  - Histogram of sample means
-  - Observed vs theoretical std dev
-  - Educational interpretation
-[✓] Added Random Walk Simulation component
-[✓] Added Monte Carlo Integration component
-[✓] Added Hypothesis Testing Explorer component
-[✓] Implemented server-side content fetching using gray-matter
-[✓] Added sample MDX content (content/probability/*.mdx)
-[✓] Added sample MDX content (content/statistics/*.mdx)
-[✓] Added Sidebar and client search component
-[✓] Added Histogram UI component (Recharts)
-[✓] Added FormulaBox with copy-to-clipboard support
-[✓] Added Scroll-to-top button
-[✓] Added CSV export for simulators
-[✓] Enabled chart animations and axis labels
-[ ] Configure environment variables
-[ ] Set up CI/CD pipeline
-[ ] Deploy to Vercel or hosting platform
-[ ] Set up domain
-[ ] Configure analytics
-[ ] Set up error monitoring
-
-FUTURE FEATURES
----------------
-[ ] User accounts and progress tracking
-[ ] Quiz/assessment system
-[ ] Forum/discussion board
-[ ] Downloadable worksheets
-[ ] PDF export of topics
-[ ] Dark/light theme toggle
-[ ] Multiple language support
-[ ] API for external integrations
-
-KNOWN ISSUES TO FIX
--------------------
-[ ] Buttons on home page not navigating correctly
-[ ] Theme consistency across pages
-
-SEO
----
-[ ] Build Topic Clusters and interlink related pages (clean URL structure)
-[ ] Use lowercase + hyphens for content slugs and routes
-[ ] Optimize page titles ("[Topic] + [Search Intent]")
-[ ] Add visual & interactive content to key pages (graphs, simulations)
-[ ] Ensure proper heading structure (H1 -> H2 -> H3)
-[ ] Add internal links across related articles
-[ ] Optimize website speed (image compression, lazy loading, static generation)
-[ ] Add structured metadata (Article, FAQ, Breadcrumb JSON-LD)
-[ ] Write search-intent focused content and map keywords
-[ ] Implement schema and metadata via Next.js Metadata API
-[ ] Monitor mobile performance (target Mobile score >85, load <2.5s)
