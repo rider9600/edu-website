@@ -1,56 +1,9 @@
-"use client";
-
 import Link from "next/link";
-import { useParams } from "next/navigation";
+import { STATISTICS_TOPICS } from "@/lib/constants";
 
-const STATISTICS_TOPICS = [
-  {
-    title: "Descriptive Statistics",
-    description: "Summarize and describe data using mean, median, std dev",
-    icon: "📊",
-    details:
-      "Descriptive statistics summarize and describe data using measures like mean, median, standard deviation, and range.",
-  },
-  {
-    title: "Inferential Statistics",
-    description: "Make conclusions about populations from samples",
-    icon: "🔍",
-    details:
-      "Inferential statistics uses sample data to make conclusions about larger populations.",
-  },
-  {
-    title: "Hypothesis Testing",
-    description: "Test claims about data with statistical rigor",
-    icon: "✅",
-    details:
-      "Hypothesis testing is a method to test claims about population parameters using sample data.",
-  },
-  {
-    title: "Confidence Intervals",
-    description: "Estimate ranges for population parameters",
-    icon: "📈",
-    details:
-      "Confidence intervals provide a range of values that likely contains the true population parameter.",
-  },
-  {
-    title: "Correlation & Regression",
-    description: "Analyze relationships between variables",
-    icon: "🔗",
-    details:
-      "Correlation and regression analyze the relationship between two or more variables.",
-  },
-  {
-    title: "ANOVA & Tests",
-    description: "Compare means across multiple groups",
-    icon: "📋",
-    details:
-      "ANOVA and other statistical tests allow us to compare means across multiple groups.",
-  },
-];
-
-export default function StatisticsTopicPage() {
-  const params = useParams();
-  const topicId = parseInt(params.id as string);
+export default async function StatisticsTopicPage(props: any) {
+  const { id } = (await props.params) as { id: string };
+  const topicId = parseInt(id);
   const topic = STATISTICS_TOPICS[topicId - 1];
 
   if (!topic) {

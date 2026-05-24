@@ -1,39 +1,7 @@
 "use client";
 
 import { TopicCard } from "@/components";
-
-const STATISTICS_TOPICS = [
-  {
-    title: "Descriptive Statistics",
-    description: "Summarize and describe data using mean, median, std dev",
-    icon: "📊",
-  },
-  {
-    title: "Inferential Statistics",
-    description: "Make conclusions about populations from samples",
-    icon: "🔍",
-  },
-  {
-    title: "Hypothesis Testing",
-    description: "Test claims about data with statistical rigor",
-    icon: "✅",
-  },
-  {
-    title: "Confidence Intervals",
-    description: "Estimate ranges for population parameters",
-    icon: "📈",
-  },
-  {
-    title: "Correlation & Regression",
-    description: "Analyze relationships between variables",
-    icon: "🔗",
-  },
-  {
-    title: "ANOVA & Tests",
-    description: "Compare means across multiple groups",
-    icon: "📋",
-  },
-];
+import { STATISTICS_TOPICS } from "@/lib/constants";
 
 export default function StatisticsPage() {
   return (

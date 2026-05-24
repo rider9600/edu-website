@@ -1,302 +1,241 @@
-# Maths Website
+# Project Handbook
 
-A modern, interactive educational platform for learning **Probability & Statistics** with visual intuition, engaging simulations, and clear explanations.
+This is the main internal reference for the current `maths-website` repo.
 
-## 🎯 Mission
+## What This Repo Is
 
-Create one of the best student-friendly Probability & Statistics learning platforms by focusing on:
+A Next.js 15 education site focused on probability and statistics. The current app includes:
 
-✅ **Conceptual Understanding** — Why things work, not just formulas  
-✅ **Visual Learning** — See the math through interactive charts and graphs  
-✅ **Intuition First** — Build understanding before introducing rigor  
-✅ **Interactive Simulations** — Engage with the concepts  
-✅ **Engineering-Friendly** — Real-world applications and examples
+- topic landing pages under `/probability` and `/statistics`
+- MDX-backed topic pages loaded from `content/`
+- interactive visualizations in `src/visualizations/`
 
-## 🚀 Quick Start
+## Current Stack
+
+- Next.js 15
+- React 19
+- TypeScript 5
+- Tailwind CSS 3
+- `next-mdx-remote`
+- `gray-matter`
+- Recharts
+- Playwright
+
+## Quick Start
 
 ### Prerequisites
-- Node.js 18+ 
-- npm or yarn
 
-### Installation
+- Node.js 18 or newer
+- npm
+
+### Install
 
 ```bash
-# Install dependencies
 npm install
+```
 
-# Start development server
+### Run
+
+```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the site.
+Default local URL: `http://localhost:3000`
 
-### Build for Production
+### Main Scripts
 
 ```bash
+npm run dev
 npm run build
-npm start
+npm run start
+npm run lint
+npm run type-check
+npm run smoke
+npm run e2e
+npm run test:e2e:preview
 ```
 
-## 📚 Project Structure
+## Current App Surface
 
-```
+- `/`
+- `/probability`
+- `/probability/[id]`
+- `/statistics`
+- `/statistics/[id]`
+- `/visualizations`
+- `/topic/[id]`
+
+## Repository Shape
+
+```text
 website/
-├── src/
-│   ├── app/                    # Next.js app router pages
-│   ├── components/             # Reusable React components
-│   │   ├── Navbar.tsx
-│   │   ├── TopicCard.tsx
-│   │   ├── FormulaBox.tsx
-│   │   ├── GraphContainer.tsx
-│   │   └── Sidebar.tsx
-│   ├── visualizations/         # Interactive simulations
-│   │   ├── CoinTossSimulator.tsx
-│   │   └── DiceSimulator.tsx
-│   ├── lib/                    # Utility functions
-│   │   ├── probability.ts      # Probability calculations
-│   │   └── statistics.ts       # Statistics calculations
-│   └── styles/
-│       └── globals.css         # Global styles
-│
-├── public/                     # Static assets
-│   ├── images/
-│   └── graphs/
-│
-├── content/                    # Article content (MDX)
-│   ├── probability/
-│   ├── statistics/
-│   ├── distributions/
-│   ├── simulation/
-│   ├── convergence/
-│   └── bayesian/
-│
-├── resources/                  # Internal research materials
-│   ├── lectures/
-│   ├── pdfs/
-│   └── markdown-notes/
-│
-├── package.json
-├── tsconfig.json
-├── tailwind.config.js
-├── next.config.js
-├── GETTING_STARTED.md
-├── CONTENT_GUIDELINES.md
-└── ARTICLE_TEMPLATE.md
+|-- content/
+|   |-- probability/
+|   `-- statistics/
+|-- docs/
+|-- e2e/
+|-- public/
+|-- resources/
+|   |-- lectures/
+|   |-- markdown-notes/
+|   `-- pdfs/
+|-- scripts/
+|-- src/
+|-- package.json
+`-- next.config.js
 ```
 
-## 🛠️ Tech Stack
+## Source Tree
 
-**Frontend:**
-- [Next.js 14](https://nextjs.org/) — React framework with App Router
-- [React 18](https://react.dev/) — UI library
-- [TypeScript](https://www.typescriptlang.org/) — Type safety
-- [Tailwind CSS](https://tailwindcss.com/) — Utility-first CSS
-- [Recharts](https://recharts.org/) — Data visualization
-- [Framer Motion](https://www.framer.com/motion/) — Animations (optional)
-
-**Development:**
-- [ESLint](https://eslint.org/) — Code linting
-- [Next.js CLI](https://nextjs.org/docs/advanced-features/cli)
-
-**Deployment:**
-- [Vercel](https://vercel.com/) — Hosting and deployment
-
-## 📖 Writing Content
-
-### Getting Started with Articles
-
-1. Read [CONTENT_GUIDELINES.md](./CONTENT_GUIDELINES.md) for detailed guidelines
-2. Use [ARTICLE_TEMPLATE.md](./ARTICLE_TEMPLATE.md) as a starting point
-3. Place articles in the appropriate `/content/` subdirectory
-4. Use MDX to embed React components and interactive visualizations
-
-### Article Structure
-
-Every article follows this proven structure:
-
-1. **Intuitive Introduction** — Hook the reader
-2. **Real-world Example** — Make it relatable
-3. **Formal Definition** — Mathematical rigor
-4. **Visual Explanation** — Diagrams and charts
-5. **Formula Intuition** — Why formulas work
-6. **Worked Example** — Step-by-step solutions
-7. **Simulation/Graph** — Interactive exploration
-8. **Common Mistakes** — What students get wrong
-9. **Related Topics** — Connections to other concepts
-10. **References** — Further reading
-
-### Creating a New Component
-
-Components should be reusable and well-documented:
-
-```tsx
-// src/components/MyComponent.tsx
-'use client'
-
-interface MyComponentProps {
-  title: string
-  // ... other props
-}
-
-export default function MyComponent({ title }: MyComponentProps) {
-  return (
-    <div className="card">
-      {/* component code */}
-    </div>
-  )
-}
+```text
+src/
+|-- app/
+|   |-- (pages)/
+|   |   |-- probability/
+|   |   |   |-- [id]/page.tsx
+|   |   |   `-- page.tsx
+|   |   |-- statistics/
+|   |   |   |-- [id]/page.tsx
+|   |   |   `-- page.tsx
+|   |   `-- visualizations/page.tsx
+|   |-- topic/[id]/page.tsx
+|   |-- globals.css
+|   |-- layout.tsx
+|   |-- not-found.tsx
+|   `-- page.tsx
+|-- components/
+|   |-- content/
+|   |-- layout/
+|   |-- ui/
+|   `-- index.ts
+|-- hooks/
+|   `-- index.ts
+|-- lib/
+|   |-- calculations/
+|   |-- constants.ts
+|   |-- content.ts
+|   `-- utils.ts
+|-- styles/
+|-- types/
+`-- visualizations/
 ```
 
-### Adding a New Visualization
+## What Lives Where
 
-Create interactive simulations in `/src/visualizations/`:
+### `src/app`
 
-```tsx
-// src/visualizations/MySimulation.tsx
-'use client'
+Route modules and page composition.
 
-import { useState } from 'react'
+- `page.tsx`: homepage
+- `(pages)/probability` and `(pages)/statistics`: topic index and topic article pages
+- `topic/[id]`: legacy numeric topic route
 
-export default function MySimulation() {
-  const [data, setData] = useState([])
-  
-  return (
-    <div className="card">
-      {/* simulation UI */}
-    </div>
-  )
-}
+### `content`
+
+Published MDX content for topic pages.
+
+- `content/probability`
+- `content/statistics`
+
+### `resources`
+
+Internal source material.
+
+- `lectures/`, `markdown-notes/`, and `pdfs/`: reference material, not part of public route rendering
+
+### `src/lib`
+
+Shared logic and data access.
+
+- `content.ts`: loads topic markdown from `content/`
+- `constants.ts`: navigation and topic metadata
+- `calculations/`: reusable math helpers
+
+### `src/components`
+
+Shared UI.
+
+- `layout/`: navbar, footer, sidebar
+- `ui/`: cards, graphs, formula box, client-only wrapper
+- `content/`: reserved for content-specific components; currently minimal
+
+### `src/visualizations`
+
+Interactive client components used on visualization pages and in MDX content.
+
+## Development Workflow
+
+Normal loop:
+
+```bash
+npm run dev
+npm run type-check
+npm run build
 ```
 
-## 📊 Core Topics (Planned)
+Use `npm run smoke` for a quick route check and `npm run e2e` for Playwright coverage.
 
-### Beginner (Topics 1-10)
-1. What is Probability
-2. Sample Space
-3. Events in Probability
-4. Conditional Probability
-5. Bayes Theorem
-6. Random Variables
-7. PMF vs PDF
-8. CDF Explained
-9. Expected Value
-10. Variance
+## Common Tasks
 
-### Intermediate (Topics 11-20)
-11. Standard Deviation
-12. Bernoulli Distribution
-13. Binomial Distribution
-14. Gaussian Distribution
-15. Poisson Distribution
-16. Central Limit Theorem
-17. Covariance
-18. Correlation
-19. Convergence in Probability
-20. Maximum Likelihood Estimation
+### Add or Edit a Topic Article
 
-## 🎨 Visualizations (Planned)
+1. Create or update a file in `content/probability` or `content/statistics`.
+2. Keep frontmatter simple: `title` and `description` are the main fields.
+3. Verify the slug matches the route you intend to use.
+4. Test the page locally.
 
-### Easy
-- ✅ Coin Toss Simulator
-- ✅ Dice Probability Simulator
-- [ ] Mean & Variance Visualizer
+### Add a Route
 
-### Medium
-- [ ] Bayes Theorem Visualizer
-- [ ] Gaussian Distribution Slider
-- [ ] PMF vs PDF Comparison
+Place route files in `src/app`.
 
-### Advanced
-- [ ] CLT Animation
-- [ ] Random Walk Simulation
-- [ ] Monte Carlo Integration
+- use `src/app/(pages)` for the main grouped sections
+- use top-level folders in `src/app` for distinct public sections
 
-## 🎨 Design System
+If the route needs navigation, update `NAVIGATION` in `src/lib/constants.ts`.
 
-The site uses a consistent design system built with Tailwind CSS:
+### Add a UI Component
 
-**Colors:**
-- Primary: `#0f172a` (dark blue)
-- Secondary: `#1e293b` (slate)
-- Accent: `#3b82f6` (blue)
-- Success: `#10b981` (green)
-- Warning: `#f59e0b` (amber)
-- Error: `#ef4444` (red)
+Choose the narrowest home possible:
 
-**Typography:**
-- Sans: Inter, system fonts
-- Mono: Fira Code
+- `src/components/layout` for structural page elements
+- `src/components/ui` for reusable display or interaction components
+- `src/components/content` only if the component is tied to article rendering
 
-**Components:**
-- `btn-primary` — Primary action button
-- `btn-secondary` — Secondary button
-- `card` — Content card container
-- `section-title` — Section heading
-- `subsection-title` — Subsection heading
+Remember to export new shared components from the relevant `index.ts`.
 
-## 🧮 Utility Functions
+### Add a Visualization
 
-### Probability Functions
-`src/lib/probability.ts`:
-- `factorial()`, `combination()`, `permutation()`
-- `gaussianPDF()`, `gaussianCDF()`
-- `poissonPMF()`, `binomialPMF()`
-- `expectedValue()`, `variance()`, `standardDeviation()`
+1. Create a client component in `src/visualizations`.
+2. Export it from `src/visualizations/index.ts`.
+3. If it must be used inside MDX, add it to the MDX component map in the relevant route page.
 
-### Statistics Functions
-`src/lib/statistics.ts`:
-- `mean()`, `median()`, `mode()`
-- `variance()`, `standardDeviation()`
-- `covariance()`, `correlation()`
-- `zscore()`, `percentile()`, `quartiles()`
+## Import Conventions
 
-## 📝 Writing Style
+Prefer aliases:
 
-- **Clear & Simple** — Avoid jargon, explain when necessary
-- **Visual First** — Use diagrams and charts before text
-- **Example-Driven** — Every concept needs an example
-- **Interactive** — Include simulations when possible
-- **Correct** — Verify all math and formulas
+```ts
+import { TopicCard } from "@/components";
+import { factorial } from "@/lib/calculations";
+import { formatNumber } from "@/lib/utils";
+import { CoinTossSimulator } from "@/visualizations";
+```
 
-## 🤝 Contributing
+## Verification Checklist
 
-1. Create a new branch for your feature
-2. Write articles following [CONTENT_GUIDELINES.md](./CONTENT_GUIDELINES.md)
-3. Use [ARTICLE_TEMPLATE.md](./ARTICLE_TEMPLATE.md) as a base
-4. Test components locally
-5. Submit a pull request
+Before committing code or docs:
 
-## ✅ Development Checklist
+1. `npm run type-check`
+2. `npm run build`
+3. `npm run smoke`
 
-- [ ] Development server runs without errors
-- [ ] Components render correctly
-- [ ] Visualizations are interactive
-- [ ] Articles load properly
-- [ ] Links work across pages
-- [ ] Mobile responsive design works
-- [ ] Accessibility standards met
+Run `npm run e2e` when you changed routing or user flows.
 
-## 📚 Resources
+## Related Docs
 
-- [GETTING_STARTED.md](./GETTING_STARTED.md) — Setup and overview
-- [CONTENT_GUIDELINES.md](./CONTENT_GUIDELINES.md) — Writing guidelines
-- [ARTICLE_TEMPLATE.md](./ARTICLE_TEMPLATE.md) — Article template
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [Recharts Documentation](https://recharts.org/)
+- [CONTENT_GUIDELINES.md](./CONTENT_GUIDELINES.md): content rules and article template
+- [REFERENCE.md](./REFERENCE.md): component list and troubleshooting
+- [project-roadmap.txt](./project-roadmap.txt): product and cleanup roadmap
 
-## 📞 Contact
+## Maintenance Rule
 
-For questions, suggestions, or collaboration opportunities, please open an issue.
-
----
-
-**Status:** 🚧 Under active development
-
-**Version:** 1.0.0
-
-**Last Updated:** May 2026
-
----
-
-*Built with ❤️ for students and engineers learning Probability & Statistics*
+When docs and code disagree, prefer the code. Keep docs narrow and current. Avoid historical status notes and future-only structure plans.

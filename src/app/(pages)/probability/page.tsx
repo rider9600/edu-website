@@ -1,41 +1,8 @@
 "use client";
 
 import { TopicCard } from "@/components";
-import { BEGINNER_TOPICS, INTERMEDIATE_TOPICS } from "@/lib/constants";
+import { PROBABILITY_TOPICS } from "@/lib/constants";
 import Sidebar from "@/components/layout/Sidebar";
-
-const PROBABILITY_TOPICS = [
-  {
-    title: "What is Probability",
-    description: "Introduction to probability concepts and basic definitions",
-    icon: "🎲",
-  },
-  {
-    title: "Sample Space & Events",
-    description: "Understanding outcomes and how to define events",
-    icon: "📋",
-  },
-  {
-    title: "Conditional Probability",
-    description: "Probability of events given certain conditions",
-    icon: "🔗",
-  },
-  {
-    title: "Bayes Theorem",
-    description: "Update probabilities with new information",
-    icon: "🧠",
-  },
-  {
-    title: "Random Variables",
-    description: "Mapping outcomes to numerical values",
-    icon: "🎯",
-  },
-  {
-    title: "Distributions",
-    description: "Probability Mass and Density Functions",
-    icon: "📊",
-  },
-];
 
 export default function ProbabilityPage() {
   return (

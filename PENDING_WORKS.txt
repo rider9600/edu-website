@@ -4,25 +4,18 @@ Last Updated: May 24, 2026
 
 COMPLETED / VERIFIED
 --------------------
-[x] Math rendering pipeline wired into lecture/probability pages with KaTeX support
-[x] Lecture flow added around `resources/lectures/L1.md`..`L26.md` without duplicating source content
-[x] Sidebar/syllabus navigation updated for course discovery and lecture access
+[x] Math rendering pipeline wired into probability pages with KaTeX support
 [x] Local E2E preview flow added and verified
 [x] Type-check, build, and local route tests passed before push
 [x] CI was confirmed green after push
 
 HIGH PRIORITY
 -------------
-[ ] Finish expanding the remaining lectures into full student-facing pages using the source material in `resources/lectures/L1.md`..`L26.md`
-[ ] Increase lecture coverage and integration of lecture resources, examples, and visualizers across the remaining course pages
-[ ] Add "mark complete" / progress behavior in navigation so students can follow the course path more clearly
-[ ] Tighten page metadata and SEO for lecture pages, including better titles, descriptions, and article schema
-[ ] Improve mobile readability and visualizer controls for lecture pages on smaller screens
 [ ] Continue accessibility work: keyboard navigation, ARIA, contrast, and font-size checks
 
 TESTING
 -------
-[ ] Re-run component rendering checks after lecture content expansion
+[ ] Re-run component rendering checks after the next content expansion
 [ ] Test responsive design on mobile
 [ ] Test keyboard navigation
 [ ] Test link functionality
@@ -39,9 +32,8 @@ PERFORMANCE & DEPLOYMENT
 
 NOTES
 -----
-- Lecture pages reference the originals in `resources/lectures/L1.md..L26.md` directly, so content should be expanded from those sources rather than copied as separate duplicates.
+- `resources/lectures/` is internal source material and should not be exposed directly in the public website.
 - Temporary helper scripts created for local debugging:
   - `scripts/check_routes.js`
   - `scripts/run_e2e_preview.js`
   These can be removed later once E2E process is stable.
-

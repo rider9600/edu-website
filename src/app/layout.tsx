@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar, Footer } from "@/components";
 import ScrollTopButton from "@/components/ui/ScrollTopButton";
-import { SITE_NAME, SITE_DESCRIPTION } from "@/lib/constants";
+import { SITE_NAME, SITE_DESCRIPTION, SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: `${SITE_NAME} - Probability & Statistics`,
   description: SITE_DESCRIPTION,
+  metadataBase: new URL(SITE_URL),
 };
 
 export const viewport = {

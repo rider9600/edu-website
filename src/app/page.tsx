@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { TopicCard } from "@/components";
 import {
@@ -11,7 +9,6 @@ import {
 export default function Home() {
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      {/* Hero Section */}
       <section className="mb-20">
         <h1 className="text-5xl md:text-6xl font-bold mb-6 text-slate-100">
           Master <span className="text-blue-400">Probability & Statistics</span>
@@ -31,7 +28,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Beginner Topics */}
       <section className="mb-20">
         <h2 className="section-title">Beginner Concepts</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -48,7 +44,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Intermediate Topics */}
       <section className="mb-20">
         <h2 className="section-title">Intermediate Topics</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -65,7 +60,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features */}
       <section className="mb-20">
         <h2 className="section-title">Why Learn Here?</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useState } from "react";
 import { BEGINNER_TOPICS, INTERMEDIATE_TOPICS } from "@/lib/constants";
-import CourseProgress from "@/components/ui/CourseProgress";
 
 type Topic = {
   title: string;
@@ -15,9 +14,9 @@ type Topic = {
 export default function Sidebar({ topics }: { topics: Topic[] }) {
   const [q, setQ] = useState("");
   const filtered = topics.filter(
-    (t) =>
-      t.title.toLowerCase().includes(q.toLowerCase()) ||
-      (t.description || "").toLowerCase().includes(q.toLowerCase()),
+    (topic) =>
+      topic.title.toLowerCase().includes(q.toLowerCase()) ||
+      (topic.description || "").toLowerCase().includes(q.toLowerCase()),
   );
 
   return (
@@ -32,23 +31,45 @@ export default function Sidebar({ topics }: { topics: Topic[] }) {
       </div>
 
       <div className="space-y-4">
-        <div>
-          <CourseProgress />
-        </div>
+        {q && (
+          <div>
+            <h4 className="text-sm font-semibold text-slate-300 mb-2">
+              Search Results
+            </h4>
+            <div className="space-y-1">
+              {filtered.length > 0 ? (
+                filtered.map((topic) => (
+                  <Link
+                    key={topic.href}
+                    href={topic.href}
+                    className="block px-3 py-2 rounded hover:bg-slate-800/50"
+                  >
+                    <div className="text-sm text-slate-200">{topic.title}</div>
+                  </Link>
+                ))
+              ) : (
+                <div className="px-3 py-2 text-sm text-slate-400">
+                  No topics found.
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
         <div>
           <h4 className="text-sm font-semibold text-slate-300 mb-2">
             Probability
           </h4>
           <div className="space-y-1">
-            {BEGINNER_TOPICS.map((t, i) => (
+            {BEGINNER_TOPICS.map((topic, i) => (
               <Link
                 key={i}
                 href={`/probability/${i + 1}`}
                 className="block px-3 py-2 rounded hover:bg-slate-800/50"
               >
                 <div className="flex items-center gap-3">
-                  <div className="text-xl">{t.icon}</div>
-                  <div className="text-sm text-slate-200">{t.title}</div>
+                  <div className="text-xl">{topic.icon}</div>
+                  <div className="text-sm text-slate-200">{topic.title}</div>
                 </div>
               </Link>
             ))}
@@ -60,15 +81,15 @@ export default function Sidebar({ topics }: { topics: Topic[] }) {
             Statistics
           </h4>
           <div className="space-y-1">
-            {INTERMEDIATE_TOPICS.map((t, i) => (
+            {INTERMEDIATE_TOPICS.map((topic, i) => (
               <Link
                 key={i}
                 href={`/statistics/${i + 1}`}
                 className="block px-3 py-2 rounded hover:bg-slate-800/50"
               >
                 <div className="flex items-center gap-3">
-                  <div className="text-xl">{t.icon}</div>
-                  <div className="text-sm text-slate-200">{t.title}</div>
+                  <div className="text-xl">{topic.icon}</div>
+                  <div className="text-sm text-slate-200">{topic.title}</div>
                 </div>
               </Link>
             ))}
@@ -76,19 +97,15 @@ export default function Sidebar({ topics }: { topics: Topic[] }) {
         </div>
 
         <div>
-          <h4 className="text-sm font-semibold text-slate-300 mb-2">Course</h4>
+          <h4 className="text-sm font-semibold text-slate-300 mb-2">
+            Explore
+          </h4>
           <div className="space-y-1">
-            <Link
-              href="/syllabus"
-              className="block px-3 py-2 rounded hover:bg-slate-800/50"
-            >
-              📚 Syllabus
-            </Link>
             <Link
               href="/visualizations"
               className="block px-3 py-2 rounded hover:bg-slate-800/50"
             >
-              🧪 Visualizations
+              Visualizations
             </Link>
           </div>
         </div>

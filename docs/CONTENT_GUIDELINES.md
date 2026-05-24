@@ -1,106 +1,149 @@
-# Probability & Statistics Content Guidelines
+# Content Guidelines
 
-## Writing an Article
+These rules apply to MDX content currently rendered by the topic routes.
 
-Each article should follow this structure:
+## Active Content Locations
 
-### 1. Intuitive Introduction (2-3 paragraphs)
-Start with a hook that makes the concept relatable. Ask "why should I care?"
+- `content/probability`
+- `content/statistics`
 
-Example: "Have you ever wondered why the weather forecast says 30% chance of rain? Let's explore probability..."
+These are the published content directories. `resources/lectures` remains internal source material and is not rendered directly on the public site.
 
-### 2. Real-world Example (1-2 paragraphs)
-Provide a concrete example before any math.
+## Article Shape
 
-Example: "Imagine you're rolling a fair die..."
+Most topic articles should follow this structure:
 
-### 3. Formal Definition (2-3 paragraphs)
-Now introduce the mathematical definition with proper notation.
+1. Introduction
+2. Real-world or intuitive example
+3. Formal definition
+4. Formula explanation
+5. Worked example
+6. Visual or simulation section
+7. Common mistakes
+8. Related topics
+9. References
 
-### 4. Visual Explanation
-Include at least one diagram, chart, or visualization. Use:
-- Recharts for interactive charts
-- SVG for diagrams
-- Interactive simulations
+Not every article needs every section, but this is the default shape.
 
-### 5. Formula Intuition (2-3 paragraphs)
-Explain WHY the formula works, not just WHAT it is.
+## Frontmatter
 
-### 6. Worked Example (1-2 problems with solutions)
-Step-by-step solutions to concrete problems.
+Use frontmatter when possible:
 
-### 7. Simulation/Graph
-Include an interactive visualization where possible.
-
-### 8. Common Mistakes (3-5 bullet points)
-- Mistake 1 and why it's wrong
-- Mistake 2 and why it's wrong
-- etc.
-
-### 9. Related Topics
-Link to related concepts.
-
-### 10. References
-- Books
-- External resources
-- Academic papers
-
-## File Structure
-
-Articles go in `/content/` subdirectories:
-
-```
-/content/
-  /probability/
-    - conditional-probability.mdx
-    - bayes-theorem.mdx
-  /statistics/
-    - hypothesis-testing.mdx
-  /distributions/
-    - gaussian-distribution.mdx
+```md
+---
+title: Conditional Probability
+description: Understand probability under conditions with examples and intuition.
+---
 ```
 
-## MDX Features
+`title` and `description` are the main fields currently consumed by the app.
 
-Use all MDX features:
+## MDX Usage
+
+You can embed supported React components inside topic content.
+
+Example:
 
 ```mdx
-# Title
+# Bayes Theorem
 
-Some content with **bold** and *italic*.
-
-<FormulaBox 
+<FormulaBox
   title="Bayes Theorem"
   formula="P(A|B) = P(B|A) * P(A) / P(B)"
-  explanation="..."
-  variables={{
-    'P(A|B)': 'Probability of A given B',
-    'P(B|A)': 'Probability of B given A'
-  }}
+  explanation="Updates a prior belief after seeing evidence."
 />
 
-<CoinTossSimulator />
+<BayesTheoremVisualizer />
 ```
 
-## Difficulty Levels
+## Important Constraint
 
-- **Beginner**: No prerequisites, from first principles
-- **Intermediate**: Assumes basic probability/statistics
-- **Advanced**: Rigorous mathematics, proofs, advanced theory
+Adding a component to MDX is not enough by itself. The component must also be registered in the MDX component mapping used by the relevant route page.
 
-## Code Style
+Today that mapping lives in route files such as:
 
-- Use TypeScript for all components
-- Follow existing component patterns
-- Keep components focused and reusable
-- Include prop documentation
+- `src/app/(pages)/probability/[id]/page.tsx`
+- `src/app/(pages)/statistics/[id]/page.tsx`
 
-## Testing Content
+## Slug Rules
 
-Before publishing:
+- filename becomes the slug
+- keep slugs lowercase and hyphenated for topic content
 
-1. Check math formulas for accuracy
-2. Test all interactive components
-3. Verify links work
-4. Review for clarity and flow
-5. Have someone unfamiliar with the topic review it
+## Writing Rules
+
+- explain concepts before notation
+- prefer one strong worked example over many shallow ones
+- keep formulas tied to intuition
+- avoid textbook-style dumping
+- verify every internal link
+
+## Article Template
+
+Use this starter for new topic content in `content/probability` or `content/statistics`.
+
+```mdx
+---
+title: Article Title
+description: One-sentence summary for cards and page headers.
+---
+
+# Article Title
+
+## Introduction
+
+Open with the intuition and the problem this concept solves.
+
+## Real-World Example
+
+Use one concrete example before formal notation.
+
+## Formal Definition
+
+State the definition clearly.
+
+## Formula Intuition
+
+Explain why the formula works.
+
+<FormulaBox
+  title="Key Formula"
+  formula="P(A|B) = P(B|A) * P(A) / P(B)"
+  explanation="Replace this with a concept-specific explanation."
+/>
+
+## Worked Example
+
+Problem: Replace with a small problem.
+
+Solution: Show the reasoning, not just the answer.
+
+## Visualization
+
+Optional. Only use components that are registered in the route's MDX component map.
+
+<CoinTossSimulator />
+
+## Common Mistakes
+
+- Mistake one and why it is wrong.
+- Mistake two and how to avoid it.
+
+## Related Topics
+
+- [Conditional Probability](/probability/conditional-probability)
+- [Bayes Theorem](/probability/bayes-theorem)
+
+## References
+
+- Book or paper reference
+- Additional reading link
+```
+
+## Review Checklist
+
+1. Frontmatter is present and accurate.
+2. The slug matches the intended route.
+3. Any embedded component is wired into the route-level MDX map.
+4. KaTeX math renders correctly.
+5. Links and navigation targets work.
